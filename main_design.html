@@ -12,10 +12,56 @@
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
 
-  <![endif]-->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<h1>Hello, world!</h1>
+
+
+  <div class="nav-side-menu">
+    <div class="brand">Brand Logo</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+
+      <ul id="menu-content" class="menu-content collapse in">
+        <li>
+          <a href="#">
+            <i class="fa fa-dashboard fa-lg"></i> Dashboard
+          </a>
+        </li>
+
+        <li data-toggle="collapse" data-target="#new" class="collapsed">
+          <a href="#"><i class="fa fa-car fa-lg"></i> New <span class="arrow"></span></a>
+        </li>
+        <ul class="sub-menu collapse" id="new">
+          <li  data-toggle="collapse" data-target="#new1" class="collapsed">New New 1</li>
+          <ul class="sub-menu collapse" id="new1">
+            <li>1-1</li>
+            <li>1-2</li>
+          </ul>
+          <li>New New 2</li>
+          <li>New New 3</li>
+        </ul>
+
+
+
+
+        <li>
+          <a href="#">
+            <i class="fa fa-user fa-lg"></i> Profile
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="fa fa-users fa-lg"></i> Users
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
