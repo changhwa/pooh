@@ -149,6 +149,18 @@
     display: block;
   }
 }
+
+.main-content{
+  padding-top: 20px;
+  padding-left: 305px;
+  padding-right: 5px;
+}
+
+.attendance-book tr th,
+.attendance-book tr td {
+  text-align: center;
+}
+
 body {
   margin: 0px;
   padding: 0px;
