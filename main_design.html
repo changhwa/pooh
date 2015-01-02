@@ -15,6 +15,7 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
 </head>
 <body>
 
@@ -301,6 +302,18 @@
           </div>
         </div>
       </div>
+      <div class="row">
+        <div>
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><i class="fa fa-line-chart"></i> 반영이력</h3>
+            </div>
+            <div class="panel-body">
+              <div id="commit-history-chart" style="height: 250px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -308,5 +321,35 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- morris js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script>
+  new Morris.Line({
+    // ID of the element in which to draw the chart.
+    element: 'commit-history-chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: [
+      {"period": "15-01-02", "천진": 17, "Rock&Roll": 20, "애플빠돌이": 10, "springair" : 13},
+      {"period": "15-01-01", "천진": 11, "Rock&Roll": null, "애플빠돌이": null, "springair" : 10},
+      {"period": "14-12-31", "천진": 19, "Rock&Roll": null, "애플빠돌이": 14, "springair" : 11},
+      {"period": "14-12-30", "천진": 16, "Rock&Roll": 2, "애플빠돌이": 3, "springair" : 5},
+      {"period": "14-12-29", "천진": 11, "Rock&Roll": 9, "애플빠돌이": 1, "springair" : 7},
+      {"period": "14-12-28", "천진": 15, "Rock&Roll": 9, "애플빠돌이": 1, "springair" : 3},
+      {"period": "14-12-27", "천진": 16, "Rock&Roll": 7, "애플빠돌이": 1, "springair" : 1},
+      {"period": "14-12-26", "천진": 15, "Rock&Roll": 10, "애플빠돌이": 2, "springair" : 1},
+      {"period": "14-12-25", "천진": 19, "Rock&Roll": null, "애플빠돌이": null, "springair" : 3}
+    ],
+    // The name of the data record attribute that contains x-values.
+    xkey: 'period',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['천진', 'Rock&Roll','애플빠돌이','springair'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    labels: ['천진', 'Rock&Roll','애플빠돌이','springair'],
+    resize: true
+  });
+</script>
 </body>
 </html>
