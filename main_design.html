@@ -96,232 +96,260 @@
     <div class="container-fluid">
       <div><h3><b> <i class="fa fa-angle-right"></i> 채팅프로그래밍 </b></h3></div>
       <hr/>
-      <div class="row">
-        <div class="attendance-book">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-book"></i>&nbsp;출석부</h3>
-            </div>
-            <div class="panel-body">
-              <div class="table-responsive">
-                <table class="table table-bordered">
-                  <thead>
-                  <tr>
-                    <th>#</th>
-                    <th>1회</th>
-                    <th>2회</th>
-                    <th>3회</th>
-                    <th>4회</th>
-                    <th>5회</th>
-                    <th>6회</th>
-                    <th>7회</th>
-                    <th>8회</th>
-                    <th>9회</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <th scope="row">천진</th>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Rock&Roll</th>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">애플빠돌이</th>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">javachobo</th>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">springair</th>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-danger">불참</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                    <td><span class="label label-success">참석</span></td>
-                  </tr>
-                  </tbody>
-                </table>
+      <div role="tabpanel">
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active">
+            <a href="#dashboard-tab" aria-controls="dashboard-tab" role="tab" data-toggle="tab">
+              Dashboard
+            </a>
+          </li>
+          <li role="presentation">
+            <a href="#activity-tab" aria-controls="activity-tab" role="tab" data-toggle="tab">
+              Activity
+            </a>
+          </li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="dashboard-tab">
+            <div id="dashboard-contents" class="dashboard-contents">
+              <div class="row">
+                <div class="attendance-book">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-book"></i>&nbsp;출석부</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="table-responsive">
+                        <table class="table table-bordered">
+                          <thead>
+                          <tr>
+                            <th>#</th>
+                            <th>1회</th>
+                            <th>2회</th>
+                            <th>3회</th>
+                            <th>4회</th>
+                            <th>5회</th>
+                            <th>6회</th>
+                            <th>7회</th>
+                            <th>8회</th>
+                            <th>9회</th>
+                          </tr>
+                          </thead>
+                          <tbody>
+                          <tr>
+                            <th scope="row">천진</th>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rock&Roll</th>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">애플빠돌이</th>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">javachobo</th>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row">springair</th>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-danger">불참</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                            <td><span class="label label-success">참석</span></td>
+                          </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="article-list">
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-language"></i> Article</h3>
+                    </div>
+                    <div class="panel-body">
+                      <table class="table">
+                        <thead>
+                        <tr>
+                          <th style="width: 10%">#</th>
+                          <th style="width: 75%">제목</th>
+                          <th style="width: 15%;">작성자</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                          <th scope="row">10</th>
+                          <td>ArrayList vs LinkedList</td>
+                          <td>천진</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">9</th>
+                          <td>stack 구현하기</td>
+                          <td>천진</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">8</th>
+                          <td>채팅개발기 Day4</td>
+                          <td>Rock&Roll</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">7</th>
+                          <td>RoR 개발기</td>
+                          <td>천진</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">6</th>
+                          <td>채팅개발기 Day4~5</td>
+                          <td>천진</td>
+                        </tr>
+                        </tbody>
+                      </table>
+                      <nav style="text-align: center;">
+                        <ul class="pagination">
+                          <li>
+                            <a href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li><a href="#">1</a></li>
+                          <li><a href="#">2</a></li>
+                          <li><a href="#">3</a></li>
+                          <li><a href="#">4</a></li>
+                          <li><a href="#">5</a></li>
+                          <li>
+                            <a href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-bar-chart"></i> 진행률</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div class="progress-content" style="padding-left: 10px;">
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
+                            <span class="sr-only">100% Complete</span>
+                          </div>
+                          <span class="progress-type">천진</span>
+                          <span class="progress-completed">100%</span>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50" style="width: 50%;">
+                            <span class="sr-only">50% Complete</span>
+                          </div>
+                          <span class="progress-type">Rock&Roll</span>
+                          <span class="progress-completed">50%</span>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="74" style="width: 74%;">
+                            <span class="sr-only">74% Complete</span>
+                          </div>
+                          <span class="progress-type">애플빠돌이</span>
+                          <span class="progress-completed">74%</span>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="52" style="width: 52%;">
+                            <span class="sr-only">52% Complete</span>
+                          </div>
+                          <span class="progress-type">javachobo</span>
+                          <span class="progress-completed">52%</span>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="93" style="width: 93%;">
+                            <span class="sr-only">93% Complete</span>
+                          </div>
+                          <span class="progress-type">springair</span>
+                          <span class="progress-completed">93%</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-line-chart"></i> 반영이력</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div id="commit-history-chart" style="height: 250px;"></div>
+                    </div>
+                  </div>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <h3 class="panel-title"><i class="fa fa-line-chart"></i> 참여율</h3>
+                    </div>
+                    <div class="panel-body">
+                      <div id="participation-rate-chart" style="height: 250px;"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+          <div role="tabpanel" class="tab-pane" id="activity-tab"></div>
 
         </div>
+
       </div>
-      <div class="row">
-        <div class="article-list">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-language"></i> Article</h3>
-            </div>
-            <div class="panel-body">
-              <table class="table">
-                <thead>
-                <tr>
-                  <th style="width: 10%">#</th>
-                  <th style="width: 75%">제목</th>
-                  <th style="width: 15%;">작성자</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                  <th scope="row">10</th>
-                  <td>ArrayList vs LinkedList</td>
-                  <td>천진</td>
-                </tr>
-                <tr>
-                  <th scope="row">9</th>
-                  <td>stack 구현하기</td>
-                  <td>천진</td>
-                </tr>
-                <tr>
-                  <th scope="row">8</th>
-                  <td>채팅개발기 Day4</td>
-                  <td>Rock&Roll</td>
-                </tr>
-                <tr>
-                  <th scope="row">7</th>
-                  <td>RoR 개발기</td>
-                  <td>천진</td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>채팅개발기 Day4~5</td>
-                  <td>천진</td>
-                </tr>
-                </tbody>
-              </table>
-              <nav style="text-align: center;">
-                <ul class="pagination">
-                  <li>
-                    <a href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li>
-                    <a href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-bar-chart"></i> 진행률</h3>
-            </div>
-            <div class="panel-body">
-              <div class="progress-content" style="padding-left: 10px;">
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-                    <span class="sr-only">100% Complete</span>
-                  </div>
-                  <span class="progress-type">천진</span>
-                  <span class="progress-completed">100%</span>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50" style="width: 50%;">
-                    <span class="sr-only">50% Complete</span>
-                  </div>
-                  <span class="progress-type">Rock&Roll</span>
-                  <span class="progress-completed">50%</span>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="74" style="width: 74%;">
-                    <span class="sr-only">74% Complete</span>
-                  </div>
-                  <span class="progress-type">애플빠돌이</span>
-                  <span class="progress-completed">74%</span>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="52" aria-valuemin="0" aria-valuemax="52" style="width: 52%;">
-                    <span class="sr-only">52% Complete</span>
-                  </div>
-                  <span class="progress-type">javachobo</span>
-                  <span class="progress-completed">52%</span>
-                </div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="93" aria-valuemin="0" aria-valuemax="93" style="width: 93%;">
-                    <span class="sr-only">93% Complete</span>
-                  </div>
-                  <span class="progress-type">springair</span>
-                  <span class="progress-completed">93%</span>
-                </div>
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-      <div class="row">
-        <div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-line-chart"></i> 반영이력</h3>
-            </div>
-            <div class="panel-body">
-              <div id="commit-history-chart" style="height: 250px;"></div>
-            </div>
-          </div>
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3 class="panel-title"><i class="fa fa-line-chart"></i> 참여율</h3>
-            </div>
-            <div class="panel-body">
-              <div id="participation-rate-chart" style="height: 250px;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </div>
 
