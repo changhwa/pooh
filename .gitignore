@@ -1,1 +1,8 @@
 .idea/
+tool/.bundle
+tool/db/*.sqlite3
+tool/db/*.sqlite3-journal
+tool/log/*
+!tool/log/.keep
+tool/tmp
+tool/.idea/
