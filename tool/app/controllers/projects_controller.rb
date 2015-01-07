@@ -79,7 +79,9 @@ class ProjectsController < ApplicationController
   end
 
   def tree
+    tree = {}
     project_tree = {}
+    projects_tree = []
     projects = Project.all
     projects.each do |project|
       users = project.users.select("users.id, users.email, users.name")
@@ -92,8 +94,10 @@ class ProjectsController < ApplicationController
         user_trees.push user_tree
       end
       project_tree[:users] = user_trees
+      projects_tree.push project_tree
     end
-    render json: project_tree
+    tree[:projects] = projects_tree
+    render json: tree.as_json
   end
 
   def entryList

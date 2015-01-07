@@ -19,9 +19,23 @@
 </div>
 
 <script id="tree-project" type="text/x-handlebars-template">
-  <li data-toggle="collapse" data-target="{{project_sub_target_id}}" class="collapsed">
-    <a href="#">
-      <i class="fa fa-archive fa-lg"></i> {{project_title}} <span class="arrow"></span>
-    </a>
-  </li>
+  {{#each projects}}
+    <li data-toggle="collapse" data-project-id="{{id}}" data-target="#project_{{id}}" class="collapsed">
+      <a href="#">
+        <i class="fa fa-archive fa-lg"></i> {{title}} <span class="arrow"></span>
+      </a>
+    </li>
+    <ul id="project_{{id}}" class="incharge-menu collapse in" aria-expanded="true">
+    {{#each users}}
+      <li data-toggle="collapse" data-target="#project_{{../id}}_user_{{id}}" class="collapsed">
+        {{name}} <span class="arrow"></span>
+      </li>
+      <ul id="project_{{../../id}}_user_{{../id}}" class="subject-menu collapse in" aria-expanded="true">
+        {{#each article}}
+          <li>{{title}}</li>
+        {{/each}}
+      </ul>
+    {{/each}}
+    </ul>
+  {{/each}}
 </script>
