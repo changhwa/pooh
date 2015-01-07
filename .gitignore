@@ -6,3 +6,4 @@ tool/log/*
 !tool/log/.keep
 tool/tmp
 tool/.idea/
+tool/upload
