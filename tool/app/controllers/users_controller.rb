@@ -72,9 +72,7 @@ class UsersController < ApplicationController
   end
 
   def list
-    project = Project.find(params[:project_id])
-    user_ids = project.entries.select("user_id")
-    user = User.where('id not in (?)', user_ids).select("id, email, name")
+    user = User.all.select("id, email, name")
     render json: user, status: :ok
   end
 

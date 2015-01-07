@@ -1,5 +1,28 @@
-<h1>New Project</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', projects_path %>
+<div>
+  <h3><b> <i class="fa fa-angle-right"></i> 프로젝트 생성 </b></h3>
+</div>
+<hr/>
+<!-- Text input-->
+<div class="form-group">
+  <div class="col-sm-12">
+    <h5><b>Title : </b></h5>
+    <input id="project_title" name="project[title]" type="text" placeholder="TITLE" class="form-control">
+  </div>
+</div>
+<div class="form-group">
+  <div class="col-sm-6">
+    <h5><b>대상자 : </b></h5>
+    <select id="user_list" class="pull-left" multiple="multiple" style="width:100%; height: 200px;">
+    </select>
+  </div>
+  <div class="col-sm-6">
+    <h5><b>참여자 : </b></h5>
+    <select id="entry_list" multiple="multiple" style="width:100%; height: 200px;">
+    </select>
+  </div>
+  <div class="col-sm-12 text-center" style="margin-top: 30px;">
+    <button id="project_create_btn" type="button" class="btn btn-default preview-add-button">
+      <span class="glyphicon glyphicon-plus"></span> Add
+    </button>
+  </div>
+</div>

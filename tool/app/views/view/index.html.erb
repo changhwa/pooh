@@ -1,0 +1,27 @@
+
+<div class="nav-side-menu">
+  <div class="brand">Project Pooh
+    <i class="fa fa-home" style="padding-left: 5px;"></i>
+    <i id="project_create_view_btn" class="fa fa-plus-square"></i>
+    <i class="fa fa-pencil-square"></i>
+    <i class="fa fa-cog"></i>
+  </div>
+
+  <div class="menu-list">
+    <ul id="menu-content" class="menu-content collapse in">
+    </ul>
+  </div>
+</div>
+<div class="container-fluid">
+  <div id="main-content" class="main-content">
+
+  </div>
+</div>
+
+<script id="tree-project" type="text/x-handlebars-template">
+  <li data-toggle="collapse" data-target="{{project_sub_target_id}}" class="collapsed">
+    <a href="#">
+      <i class="fa fa-archive fa-lg"></i> {{project_title}} <span class="arrow"></span>
+    </a>
+  </li>
+</script>

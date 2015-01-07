@@ -16,6 +16,7 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   def new
     @project = Project.new
+    render layout: false
   end
 
   # GET /projects/1/edit
@@ -26,15 +27,18 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
-
-    respond_to do |format|
-      if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
-        format.json { render :show, status: :created, location: @project }
-      else
-        format.html { render :new }
-        format.json { render json: @project.errors, status: :unprocessable_entity }
+    if @project.save
+      project = Project.find(@project.id)
+      userids = params[:project][:user_ids]
+      userids.each do |user_id|
+        exists_user = project.entries.find_by_user_id(user_id)
+        if exists_user == nil
+          project.entries.create(user_id: user_id, project_id: project.id)
+        end
       end
+      render json: result_notice('프로젝트를 생성하였습니다'), status: :ok
+    else
+      render json: result_notice('프로젝트를 실패하였습니다'), status: :internal_server_error
     end
   end
 
@@ -104,6 +108,12 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description)
+      params.require(:project).permit(:title, :description, :user_ids)
+    end
+
+    def result_notice(notice_msg)
+      result = {}
+      result[:notice] = notice_msg
+      result
     end
 end

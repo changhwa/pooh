@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'view#index'
+
   resources :articles
 
   resources :projects do

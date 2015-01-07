@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pooh Site Design</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+</head>
+<body>
+
+
+  <div class="nav-side-menu">
+    <div class="brand">Project Pooh
+      <i class="fa fa-home" style="padding-left: 5px;"></i>
+      <i class="fa fa-plus-square"></i>
+      <i class="fa fa-pencil-square"></i>
+    </div>
+
+    <div class="menu-list">
+      <ul id="menu-content" class="menu-content collapse in">
+        <!-- 첫번째 -->
+        <li data-toggle="collapse" data-target="#project_1" class="collapsed">
+          <a href="#">
+            <i class="fa fa-archive fa-lg"></i> 채팅프로그래밍 <span class="arrow"></span>
+          </a>
+        </li>
+        <ul id="project_1" class="incharge-menu collapse in" aria-expanded="true">
+          <li data-toggle="collapse" data-target="#project_1_user_1" class="collapsed">
+            천진 <span class="arrow"></span>
+          </li>
+          <ul id="project_1_user_1" class="subject-menu collapse in" aria-expanded="true">
+            <li>ArrayList vs LinkedList</li>
+            <li>stack 구현하기</li>
+            <li>ROR 개발기</li>
+            <li>채팅개발기Day1~3</li>
+            <li>채팅개발기Day4~5</li>
+          </ul>
+          <li data-toggle="collapse" data-target="#project_1_user_2" class="collapsed">
+            Rock&Roll <span class="arrow"></span>
+          </li>
+          <ul id="project_1_user_2" class="subject-menu collapse in" aria-expanded="true">
+            <li>채팅개발기 Day1</li>
+            <li>채팅개발기 Day2</li>
+            <li>채팅개발기 Day3</li>
+            <li>채팅개발기 Day4</li>
+            <li>채팅개발기 Day5</li>
+          </ul>
+          <li data-toggle="collapse" data-target="#project_1_user_3" class="collapsed">
+            애플빠돌이
+          </li>
+        </ul>
+        <!-- 첫번째 끝 -->
+        <!-- 두번째 -->
+        <li data-toggle="collapse" data-target="#project_2" class="collapsed">
+          <a href="#">
+            <i class="fa fa-archive fa-lg"></i> 블로그개발 <span class="arrow"></span>
+          </a>
+        </li>
+        <ul id="project_2" class="incharge-menu collapse in" aria-expanded="true">
+          <li data-toggle="collapse" data-target="#project_2_user_1" class="collapsed">
+            천진 <span class="arrow"></span>
+          </li>
+          <ul id="project_2_user_1" class="subject-menu collapse in" aria-expanded="true">
+            <li>ArrayList vs LinkedList</li>
+            <li>stack 구현하기</li>
+            <li>ROR 개발기</li>
+            <li>채팅개발기Day1~3</li>
+            <li>채팅개발기Day4~5</li>
+          </ul>
+          <li data-toggle="collapse" data-target="#project_2_user_2" class="collapsed">
+            Rock&Roll <span class="arrow"></span>
+          </li>
+          <ul id="project_2_user_2" class="subject-menu collapse in" aria-expanded="true">
+            <li>채팅개발기 Day1</li>
+            <li>채팅개발기 Day2</li>
+            <li>채팅개발기 Day3</li>
+            <li>채팅개발기 Day4</li>
+            <li>채팅개발기 Day5</li>
+          </ul>
+          <li data-toggle="collapse" data-target="#project_2_user_3" class="collapsed">
+            애플빠돌이
+          </li>
+        </ul>
+        <!-- 두번째 끝 -->
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <div class="container-fluid">
+      <div><h3><b> <i class="fa fa-angle-right"></i> 문서 등록 </b></h3></div>
+      <hr/>
+      <!-- Text input-->
+      <div class="form-group">
+        <div class="col-sm-12">
+          <h5><b>Title : </b></h5>
+          <input type="text" placeholder="TITLE" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12">
+          <h5><b>문서파일 : </b></h5>
+          <input type="file" title="document file" class="form-control">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-12 text-center" style="margin-top: 30px;">
+          <button type="button" class="btn btn-default preview-add-button">
+            <span class="glyphicon glyphicon-plus"></span> Add
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<!-- morris js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+<script>
+  new Morris.Line({
+    // ID of the element in which to draw the chart.
+    element: 'commit-history-chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: [
+      {"period": "2015-01-02", "천진": 17, "Rock&Roll": 20, "애플빠돌이": 10, "springair" : 13},
+      {"period": "2015-01-01", "천진": 11, "Rock&Roll": null, "애플빠돌이": null, "springair" : 10},
+      {"period": "2014-12-31", "천진": 19, "Rock&Roll": null, "애플빠돌이": 14, "springair" : 11},
+      {"period": "2014-12-30", "천진": 16, "Rock&Roll": 2, "애플빠돌이": 3, "springair" : 5},
+      {"period": "2014-12-29", "천진": 11, "Rock&Roll": 9, "애플빠돌이": 1, "springair" : 7},
+      {"period": "2014-12-28", "천진": 15, "Rock&Roll": 9, "애플빠돌이": 1, "springair" : 3},
+      {"period": "2014-12-27", "천진": 16, "Rock&Roll": 7, "애플빠돌이": 1, "springair" : 1}
+    ],
+    // The name of the data record attribute that contains x-values.
+    xkey: 'period',
+    // A list of names of data record attributes that contain y-values.
+    ykeys: ['천진', 'Rock&Roll','애플빠돌이','springair'],
+    // Labels for the ykeys -- will be displayed when you hover over the
+    // chart.
+    labels: ['천진', 'Rock&Roll','애플빠돌이','springair'],
+    resize: true
+  });
+  new Morris.Donut({
+    // ID of the element in which to draw the chart.
+    element: 'participation-rate-chart',
+    // Chart data records -- each entry in this array corresponds to a point on
+    // the chart.
+    data: [
+      {label: '천진', value: 42 },
+      {label: 'Rock&Roll', value: 18 },
+      {label: '애플빠돌이', value: 10 },
+      {label: 'springair', value: 30 }
+    ],
+    formatter: function (y) { return y + "%" },
+    resize: true
+  });
+</script>
+</body>
+</html>
