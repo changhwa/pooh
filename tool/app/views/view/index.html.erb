@@ -50,3 +50,48 @@
     </div>
   </div>
 </script>
+
+<script id="attendance_book_table_template" type="text/x-handlebars-template">
+  <div id="attendance-book" class="attendance-book">
+    <div class="row">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            <i class="fa fa-book"></i>
+            &nbsp;출석부&nbsp;
+            <i id="attendance_book_add_btn" class="fa fa-plus-square pull-right"></i></h3>
+        </div>
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table id="attendance_book_table" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  {{#each attendance_book.[0].attendance}}
+                    <th>{{@index}}회</th>
+                  {{/each}}
+                </tr>
+              </thead>
+              <tbody>
+                {{#each attendance_book}}
+                  <tr>
+                    <th scope="row" width="10%">{{entry_name}}</th>
+                      {{#each attendance}}
+                        <td name="attendance_book_join_yn"
+                            data-attendance-id="{{id}}"
+                            data-attendance-number="{{number}}"
+                            data-entry-id="{{entry_id}}"
+                            data-join-yn="{{join_yn}}">
+                          {{join join_yn}}
+                        </td>
+                      {{/each}}
+                  </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

@@ -23,6 +23,7 @@ class View
           $("#main-content").html(data)
           Article.event().renderProjectSelectList()
     View::event().renderProjectTree()
+    View::event().renderDashboard()
   event: () ->
     renderProjectTree: () ->
       $.ajax
@@ -30,6 +31,7 @@ class View
         url: "/projects/tree"
         dataType: "json"
         success: (data) ->
+          console.log data
           source = $("#tree-project").html()
           template = Handlebars.compile(source)
           html = template(data)
@@ -41,7 +43,55 @@ class View
             template = Handlebars.compile(source)
             html = template({id: $(this).data('articleId'), title: $(this).data('articleTitle')})
             $("#main-content").append(html)
+    renderDashboard: () ->
+      $.ajax
+        type: "get"
+        url: "/projects/15/attendances/"
+        dataType: "json"
+        success: (data) ->
+          console.log(data)
 
+          source = $("#attendance_book_table_template").html()
+          template = Handlebars.compile(source)
+          Handlebars.registerHelper 'join', (join_yn) ->
+            if join_yn == 'Y'
+              return new Handlebars.SafeString('<span class="label label-success">참석</span>')
+            else if join_yn == 'N'
+              return new Handlebars.SafeString('<span class="label label-danger">불참</span>')
+            return new Handlebars.SafeString('<span class="label label-success"></span>')
+          html = template(data)
+          $("#main-content").append(html)
+
+          $("#attendance_book_add_btn").click ->
+            $("#attendance-book").remove()
+            Attendance.event().createAttendanceBook()
+            View::event().renderDashboard()
+
+          $("td[name=attendance_book_join_yn]").click ->
+            that = $(this)
+            attendance = {}
+            attendance.entry_id = that.data('entryId')
+            attendance.join_yn = that.data('joinYn')
+            attendance.number = that.data('attendanceNumber')
+            attendance.id= that.data('attendanceId')
+            $.ajax
+              type: "put"
+              url: "/projects/15/attendance/"+attendance.entry_id+"/join/"+attendance.id
+              data: {attendance : attendance}
+              dataType: "json"
+              success: (data) ->
+                console.log (data)
+                that.data("joinYn",data.join_yn)
+                span = that.find("span")
+                txt = '참석'
+                if data.join_yn == 'Y'
+                  span.removeClass('label-danger')
+                  span.addClass('label-success')
+                else
+                  span.removeClass('label-success')
+                  span.addClass('label-danger')
+                  txt = '불참'
+                that.find("span").text(txt)
 
 jQuery ->
   window.View = new View()

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  entry_id: 
+  number: 1
+  join_yn: MyString
+
+two:
+  entry_id: 
+  number: 1
+  join_yn: MyString

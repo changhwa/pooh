@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :attendances
+
   root 'view#index'
 
   resources :articles
@@ -10,6 +12,9 @@ Rails.application.routes.draw do
       post 'entry/join' => 'projects#join'
       get 'tree'
     end
+    get '/attendances' => 'attendances#index'
+    post '/attendances' => 'attendances#create'
+    put '/attendance/:entry_id/join/:id' => 'attendances#update'
   end
 
   resources :users do
