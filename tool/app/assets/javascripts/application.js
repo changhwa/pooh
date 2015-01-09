@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.browser
+//= require jquery.iframe-auto-height.plugin.1.9.5.min
 //= require_tree .

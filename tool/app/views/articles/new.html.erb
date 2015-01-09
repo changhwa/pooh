@@ -1,5 +1,36 @@
-<h1>New Article</h1>
+<div><h3><b> <i class="fa fa-angle-right"></i> 문서 등록 </b></h3></div>
+<hr/>
+<form class="form-horizontal" enctype="multipart/form-data" action="/articles/" method="post" role="form">
+  <fieldset>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <h5><b>Title : </b></h5>
+        <input type="text" placeholder="TITLE" class="form-control" id="article_title" name="article[title]">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <h5><b>Project : </b></h5>
+        <select class="form-control" id="article_project" name="article[project]">
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <h5><b>문서파일 : </b></h5>
+        <input type="file" title="document file" class="form-control" id="article_body" name="article[article_body]">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-12 text-center" style="margin-top: 30px;">
+        <button type="submit" class="btn btn-default preview-add-button">
+          <span class="glyphicon glyphicon-plus"></span> Add
+        </button>
+      </div>
+    </div>
+  </fieldset>
+</form>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
+<script id="article_project_select_list" type="text/x-handlebars-template">
+  <option value="{{id}}">{{title}}</option>
+</script>

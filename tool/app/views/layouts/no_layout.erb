@@ -1,0 +1,16 @@
+<div id="article-content">
+  <%= yield %>
+</div>
+<script type="text/javascript">
+  function init(){
+    var doc = document.getElementById('article-content');
+    if(doc.offsetHeight == 0){
+    } else {
+      pageheight = doc.offsetHeight+100;
+      parent.document.getElementById("article-iframe").height = pageheight+"px";
+    }
+  }
+  window.onload = function(){
+    init();
+  }
+</script>

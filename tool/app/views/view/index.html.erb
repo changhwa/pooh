@@ -32,10 +32,21 @@
       </li>
       <ul id="project_{{../id}}_user_{{id}}" class="subject-menu collapse in" aria-expanded="true">
         {{#each article}}
-          <li>{{title}}</li>
+          <li name="tree_article_list" data-article-id="{{id}}" data-article-title="{{title}}">{{title}}</li>
         {{/each}}
       </ul>
     {{/each}}
     </ul>
   {{/each}}
+</script>
+
+<script  id="article-content-iframe" type="text/x-handlebars-template">
+  <div><h3><b> <i class="fa fa-angle-right"></i> {{title}} </b></h3></div>
+  <hr/>
+  <div class="row">
+    <!--글 시작 -->
+    <div id="document" class="pull-left" style="width: 90%">
+      <iframe id="article-iframe" src="/articles/{{id}}" width="100%" height="100%" class="auto-height" scrolling="no" frameborder="0"></iframe>
+    </div>
+  </div>
 </script>

@@ -3,6 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 class View
   constructor: () ->
+    console.log "ssss"
     View::init()
   init: () ->
     $("#project_create_view_btn").click ->
@@ -13,6 +14,14 @@ class View
         success: (data) ->
           $("#main-content").html(data)
           Project.event().renderProjectCreateView()
+    $("#tree_article_write_btn").click ->
+      $.ajax
+        type: "get"
+        url: "/articles/new"
+        dataType: "html"
+        success: (data) ->
+          $("#main-content").html(data)
+          Article.event().renderProjectSelectList()
     View::event().renderProjectTree()
   event: () ->
     renderProjectTree: () ->
@@ -21,11 +30,18 @@ class View
         url: "/projects/tree"
         dataType: "json"
         success: (data) ->
-          console.log data
           source = $("#tree-project").html()
           template = Handlebars.compile(source)
           html = template(data)
           $("#menu-content").append(html)
+
+          $("li[name=tree_article_list]").click ->
+            $("#main-content").html("")
+            source = $("#article-content-iframe").html()
+            template = Handlebars.compile(source)
+            html = template({id: $(this).data('articleId'), title: $(this).data('articleTitle')})
+            $("#main-content").append(html)
+
 
 jQuery ->
   window.View = new View()

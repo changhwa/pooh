@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token
 
   # GET /articles
   # GET /articles.json
@@ -10,11 +11,14 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
+    article = Article.find(params[:id])
+    render file: article.doc_url, layout: 'no_layout'
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    render layout: false
   end
 
   # GET /articles/1/edit
@@ -24,13 +28,16 @@ class ArticlesController < ApplicationController
   # POST /articles
   # POST /articles.json
   def create
-    @article = Article.new(article_params)
+    project = Project.find(params[:article][:project])
+    # fixed : 세션으로 변경할것
+    entry = project.entries.find_by_user_id(2)
+    @article = entry.articles.new(article_params)
 
     respond_to do |format|
       if @article.save
-        Article.upload(params[:article][:file])
-        format.html { redirect_to @article, notice: 'Article was successfully created.' }
-        format.json { render :show, status: :created, location: @article }
+        path = Article.upload(params[:article][:article_body])
+        @article.update doc_url: path
+        format.html { redirect_to '/', notice: 'Article was successfully created.' }
       else
         format.html { render :new }
         format.json { render json: @article.errors, status: :unprocessable_entity }
