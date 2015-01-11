@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150109151242) do
+ActiveRecord::Schema.define(version: 20150111204611) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
@@ -37,9 +37,20 @@ ActiveRecord::Schema.define(version: 20150109151242) do
   create_table "entries", force: :cascade do |t|
     t.integer  "project_id"
     t.integer  "user_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+    t.integer  "progress_percent"
+  end
+
+  create_table "progresses", force: :cascade do |t|
+    t.integer  "percentage"
+    t.integer  "entry_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_index "progresses", ["entry_id"], name: "index_progresses_on_entry_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"

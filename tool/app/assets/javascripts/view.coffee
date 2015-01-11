@@ -49,8 +49,6 @@ class View
         url: "/projects/15/attendances/"
         dataType: "json"
         success: (data) ->
-          console.log(data)
-
           source = $("#attendance_book_table_template").html()
           template = Handlebars.compile(source)
           Handlebars.registerHelper 'join', (join_yn) ->
@@ -92,6 +90,17 @@ class View
                   span.addClass('label-danger')
                   txt = '불참'
                 that.find("span").text(txt)
+      $.ajax
+        type: "get"
+        url: "/projects/15/entry/list"
+        dataType: "json"
+        success: (data) ->
+          console.log data
+          source = $("#progress_chart_template").html()
+          template = Handlebars.compile(source)
+          html = template(data)
+          $("#main-content").append(html)
+
 
 jQuery ->
   window.View = new View()

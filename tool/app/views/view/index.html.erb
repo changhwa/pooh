@@ -95,3 +95,36 @@
     </div>
   </div>
 </script>
+
+<script id="progress_chart_template" type="text/x-handlebars-template">
+  <div id="progress_chart">
+    <div class="row">
+      <div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><i class="fa fa-bar-chart"></i> 진행률</h3>
+          </div>
+          <div class="panel-body">
+            <div class="progress-content" style="padding-left: 10px;">
+              {{#each entries}}
+              <!-- fixme: 에디터에서 에러가나는데.. 해결방법 고민 -->
+                <div class="progress">
+                  <div class="progress-bar"
+                       role="progressbar"
+                       aria-valuenow="{{progress_percent}}"
+                       aria-valuemin="0"
+                       aria-valuemax="{{progress_percent}}"
+                       style="width: {{progress_percent}}%;">
+                    <span class="sr-only">{{progress_percent}}% Complete</span>
+                  </div>
+                  <span class="progress-type">{{name}}</span>
+                  <span class="progress-completed">{{progress_percent}}%</span>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</script>

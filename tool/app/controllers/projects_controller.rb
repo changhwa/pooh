@@ -101,8 +101,10 @@ class ProjectsController < ApplicationController
     render json: tree.as_json
   end
 
-  def entryList
-    render json: Project.find(params[:project_id]).users.select("users.id, users.email, users.name")
+  def entry_list
+    entry_list = {}
+    entry_list[:entries] = Project.find(params[:project_id]).entries
+    render json: entry_list
   end
 
   private
@@ -113,7 +115,7 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:title, :description, :user_ids)
+      params.require(:project).permit(:title, :description, :user_ids, :name, :progress_percent)
     end
 
     def result_notice(notice_msg)

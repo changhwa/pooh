@@ -8,10 +8,10 @@ Rails.application.routes.draw do
 
   resources :projects do
     collection do
-      get 'entry/list' => 'projects#entryList'
       post 'entry/join' => 'projects#join'
       get 'tree'
     end
+    get '/entry/list' => 'projects#entry_list'
     get '/attendances' => 'attendances#index'
     post '/attendances' => 'attendances#create'
     put '/attendance/:entry_id/join/:id' => 'attendances#update'
