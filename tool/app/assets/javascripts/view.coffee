@@ -60,6 +60,17 @@ class View
           html = template(data)
           $("#main-content").append(html)
 
+          $.ajax
+            type: "get"
+            url: "/projects/15/entry/list"
+            dataType: "json"
+            success: (data) ->
+              console.log data
+              source = $("#progress_chart_template").html()
+              template = Handlebars.compile(source)
+              html = template(data)
+              $("#main-content").append(html)
+
           $("#attendance_book_add_btn").click ->
             $("#attendance-book").remove()
             Attendance.event().createAttendanceBook()
@@ -90,16 +101,7 @@ class View
                   span.addClass('label-danger')
                   txt = '불참'
                 that.find("span").text(txt)
-      $.ajax
-        type: "get"
-        url: "/projects/15/entry/list"
-        dataType: "json"
-        success: (data) ->
-          console.log data
-          source = $("#progress_chart_template").html()
-          template = Handlebars.compile(source)
-          html = template(data)
-          $("#main-content").append(html)
+
 
 
 jQuery ->
