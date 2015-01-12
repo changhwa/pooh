@@ -85,7 +85,8 @@ class ProjectsController < ApplicationController
     projects_tree = []
     projects = Project.all
     projects.each do |project|
-      users = project.users.select("users.id, users.email, users.name")
+      # users = project.users.select("users.id, users.email, users.name")
+      users = User.joins(:entries => :project).where("projects.id = ?", project.id).select("users.id, users.email, users.name")
       project_tree = project.as_json
       user_tree = {}
       user_trees = []
